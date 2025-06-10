@@ -1,0 +1,23 @@
+{
+  "name": "AI Learning Platform Dev Env",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/mongodb:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mongodb.mongodb-vscode",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install --prefix client && npm install --prefix server",
+  "forwardPorts": [3000, 5000],
+  "remoteUser": "vscode"
+}
