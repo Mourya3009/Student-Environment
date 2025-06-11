@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal - Login & Register</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/stylesheets/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -32,15 +32,15 @@
                     <h3>Welcome Back!</h3>
                     <p class="subtitle">Sign in to access your student dashboard</p>
                     
-                    <form class="auth-form">
+                    <form class="auth-form" action="/login" method="post">
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" placeholder="Email Address" name="email" required>
                         </div>
                         
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" name="password" required>
                             <i class="fas fa-eye toggle-password"></i>
                         </div>
                         
@@ -66,31 +66,31 @@
                     <h3>Join Our Community!</h3>
                     <p class="subtitle">Create your student account to get started</p>
                     
-                    <form class="auth-form">
+                    <form class="auth-form" action="/register" method="post">
                         <div class="input-row">
                             <div class="input-group">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="First Name" required>
+                                <input type="text" placeholder="First Name" name="firstname" required>
                             </div>
                             <div class="input-group">
                                 <i class="fas fa-user"></i>
-                                <input type="text" placeholder="Last Name" required>
+                                <input type="text" placeholder="Last Name" name="lastname" required>
                             </div>
                         </div>
                         
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
-                            <input type="email" placeholder="Email Address" required>
+                            <input type="email" placeholder="Email Address" name="email" required>
                         </div>
                         
                         <div class="input-group">
                             <i class="fas fa-id-card"></i>
-                            <input type="text" placeholder="Student ID" required>
+                            <input type="text" placeholder="Student ID" name="studentID" required>
                         </div>
                         
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="Password" required>
+                            <input type="password" placeholder="Password" name="password" required>
                             <i class="fas fa-eye toggle-password"></i>
                         </div>
                         
@@ -126,16 +126,13 @@
                             <i class="fab fa-google"></i>
                             Google
                         </button>
-                        <button class="social-btn microsoft">
-                            <i class="fab fa-microsoft"></i>
-                            Microsoft
-                        </button>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="javascripts/login.js"></script>
 </body>
 </html>

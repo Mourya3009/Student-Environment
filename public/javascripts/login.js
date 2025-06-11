@@ -184,7 +184,7 @@ function clearFieldError(field) {
 
 // Form Submission Handler
 function handleFormSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     
     const form = e.target;
     const formData = new FormData(form);
