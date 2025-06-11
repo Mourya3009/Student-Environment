@@ -1,2 +1,2 @@
-# AI_STudent-Environment
+# AI_Student-Environment
 # Student-Environment
