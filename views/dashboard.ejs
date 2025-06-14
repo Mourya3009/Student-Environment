@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Dashboard</title>
+    <link rel="stylesheet" href="../stylesheets/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="user-info">
+                    <div class="avatar">
+                        <span class="avatar-text">AJ</span>
+                    </div>
+                    <div class="welcome-text">
+                        <h1>Welcome, <%= name %>!</h1>
+                        <p class="date-time">
+                            <span id="current-date"></span> • <span id="current-time"></span> IST
+                        </p>
+                    </div>
+                </div>
+                <div class="header-buttons">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-cog"></i>
+                        My Profile
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+
+            <!-- Motivational Quote -->
+            <div class="quote-card">
+                <p>"Ready to learn something new today? Your dedication shines! ✨"</p>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Learning Path Progress -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-book-open"></i> My Learning Path Progress</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="progress-section">
+                                <div class="progress-header">
+                                    <span>Overall Progress</span>
+                                    <span>68% Complete</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%"></div>
+                                </div>
+                            </div>
+
+                            <div class="current-course">
+                                <p class="course-label">Currently learning:</p>
+                                <p class="course-name">Advanced React Development</p>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-play"></i>
+                                    Resume Learning
+                                </button>
+                            </div>
+
+                            <div class="next-course">
+                                <p class="course-label">What's next for you?</p>
+                                <p class="course-name">Discover Advanced JavaScript Patterns</p>
+                                <button class="btn btn-secondary">
+                                    <i class="fas fa-arrow-right"></i>
+                                    Start Learning
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Overview -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-brain"></i> My Skills Overview</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>React.js</span>
+                                        <span class="badge badge-advanced">Advanced</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 85%"></div>
+                                    </div>
+                                    <p class="skill-percentage">85% proficiency</p>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Python</span>
+                                        <span class="badge badge-intermediate">Intermediate</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 70%"></div>
+                                    </div>
+                                    <p class="skill-percentage">70% proficiency</p>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>TypeScript</span>
+                                        <span class="badge badge-intermediate">Intermediate</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 65%"></div>
+                                    </div>
+                                    <p class="skill-percentage">65% proficiency</p>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>Node.js</span>
+                                        <span class="badge badge-beginner">Beginner</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <p class="skill-percentage">40% proficiency</p>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span>SQL</span>
+                                        <span class="badge badge-beginner">Beginner</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 30%"></div>
+                                    </div>
+                                    <p class="skill-percentage">30% proficiency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projects Showcase -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fab fa-github"></i> Projects Showcase</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="projects-grid">
+                                <div class="project-item">
+                                    <h4>E-commerce Dashboard</h4>
+                                    <p>React, Node.js</p>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-code"></i>
+                                        View Project
+                                    </button>
+                                </div>
+                                <div class="project-item">
+                                    <h4>Weather App</h4>
+                                    <p>JavaScript, API</p>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-code"></i>
+                                        View Project
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Recent Learning Activity</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-dot"></div>
+                                    <div class="activity-content">
+                                        <p class="activity-title">React Hooks Deep Dive</p>
+                                        <p class="activity-date">2 hours ago</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-dot"></div>
+                                    <div class="activity-content">
+                                        <p class="activity-title">JavaScript Fundamentals - Module 5</p>
+                                        <p class="activity-date">Yesterday</p>
+                                    </div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-dot"></div>
+                                    <div class="activity-content">
+                                        <p class="activity-title">Code generation for API integration</p>
+                                        <p class="activity-date">2 days ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Quick Access -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Quick Access</h3>
+                            <p class="card-description">Jump to your favorite tools</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="quick-access-buttons">
+                                <button class="btn btn-outline full-width">
+                                    <i class="fas fa-robot"></i>
+                                    <span>AI Chatbot</span>
+                                    <small>Get code help</small>
+                                </button>
+                                <button class="btn btn-outline full-width">
+                                    <i class="fas fa-file-alt"></i>
+                                    <span>Resume Builder</span>
+                                    <small>Update profile</small>
+                                </button>
+                                <button class="btn btn-outline full-width">
+                                    <i class="fas fa-book-open"></i>
+                                    <span>Learning Resources</span>
+                                    <small>Discover content</small>
+                                </button>
+                                <button class="btn btn-outline full-width">
+                                    <i class="fas fa-sticky-note"></i>
+                                    <span>My Notes</span>
+                                    <small>Access saved notes</small>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Goals & Milestones -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-bullseye"></i> Goals & Milestones</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="goals-list">
+                                <div class="goal-item">
+                                    <div class="goal-header">
+                                        <span>Complete React Course</span>
+                                        <span class="goal-deadline">July 30th</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 75%"></div>
+                                    </div>
+                                    <p class="goal-percentage">75% complete</p>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-header">
+                                        <span>Build 3 Portfolio Projects</span>
+                                        <span class="goal-deadline">August 15th</span>
+                                    </div>
+                                    <div class="progress-bar small">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                    <p class="goal-percentage">40% complete</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Well-being Corner -->
+                    <div class="card wellbeing-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-heart"></i> Self-Care Corner</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="wellbeing-section">
+                                <p class="wellbeing-question">How are you feeling today?</p>
+                                <button class="btn btn-mood" id="mood-btn">
+                                    <i class="fas fa-smile"></i>
+                                    Track Mood
+                                </button>
+                                <p class="mood-tracked" id="mood-tracked" style="display: none;">Mood tracked! ✨</p>
+                            </div>
+
+                            <div class="separator"></div>
+
+                            <div class="wellbeing-section">
+                                <p class="wellbeing-question">Take a Break?</p>
+                                <button class="btn btn-mood">
+                                    <i class="fas fa-coffee"></i>
+                                    5-min Breathing Exercise
+                                </button>
+                            </div>
+
+                            <div class="disclaimer">
+                                <p><strong>Disclaimer:</strong></p>
+                                <p>This feature is for self-care and general well-being support only. It is not a substitute for professional medical or psychological advice. If you are experiencing serious mental health concerns, please consult a qualified healthcare professional.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- New Content Highlights -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>New Content Highlights</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="content-highlights">
+                                <div class="highlight-item">
+                                    <h4>Advanced React Patterns</h4>
+                                    <p>Master complex React concepts</p>
+                                    <span class="badge badge-new">New</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <h4>Python for Data Science</h4>
+                                    <p>Complete data analysis course</p>
+                                    <span class="badge badge-new">New</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascripts/dashboard.js"></script>
+</body>
+</html>

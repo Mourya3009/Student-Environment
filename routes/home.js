@@ -37,7 +37,7 @@ router.post('/register',async (req,res)=>{
             let token = jwt.sign({email:email,id:user._id},"secret");
             res.cookie("token",token,{maxAge:1000*60*60*24});
             console.log(req.cookies.token)
-            res.redirect('/profile')
+            res.redirect('/dashboard');
         })
     })  
 })
@@ -53,7 +53,7 @@ router.post("/login",async (req,res)=>{
         res.cookie("token",token,{maxAge:1000*60*60*24});
         console.log(req.cookies.token)
         // 
-        res.redirect('/profile')
+        res.redirect('/dashboard');
     }
     else{
         res.send("Something went wrong");
@@ -75,7 +75,15 @@ router.get("/logout",isLoggedin,(req,res)=>{
 router.get("/profile",isLoggedin,(req,res)=>{
     let data = req.user;
     console.log(data);
+    // res.render("profile.ejs",{name:data.username});
     res.render("profile.ejs",{name:data.username});
+})
+
+router.get("/dashboard",isLoggedin,(req,res)=>{
+    let data = req.user;
+    console.log(data);
+    // res.render("profile.ejs",{name:data.username});
+    res.render("dashboard.ejs",{name:data.username});
 })
 
 export default router;

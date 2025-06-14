@@ -15,5 +15,5 @@ app.use(cookieParser());
 app.use("/",homeRouter)
 
 app.listen(3000,()=>{
-    console.log("listening on port 3300: http://localhost:3000");
-})
+    console.log("listening on port 3000: http://localhost:3000");
+});
