@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Dashboard</title>
-    <link rel="stylesheet" href="../stylesheets/dashboard.css">
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -30,7 +30,7 @@
                         My Profile
                     </button>
                     </a>
-                    
+
                     <a href="/logout">
                     <button  class="btn btn-outline">
                         <i class="fas fa-sign-out-alt"></i>
@@ -41,9 +41,9 @@
             </div>
 
             <!-- Motivational Quote -->
-            <div class="quote-card">
-                <p>"Ready to learn something new today? Your dedication shines! ✨"</p>
-            </div>
+           <div class="quote-box">
+                 <p id="quote-text" >"Ready to learn something new today? Your dedication shines! ✨"</p>
+         </div>
 
             <!-- Main Dashboard Grid -->
             <div class="dashboard-grid">
@@ -328,6 +328,49 @@
         </div>
     </div>
 
-    <script src="../javascripts/dashboard.js"></script>
+ 
+
+
+
+    <script src="/javascripts/dashboard.js"></script>
+<script>
+  window.onload = function () {
+    const quotes = [
+      "💡 Ready to learn something new today? Your dedication shines! ✨",
+      "🚀 Keep pushing forward—your future self will thank you!",
+      "🏆 Every small step you take adds up to big achievements!",
+      "💪 Consistency beats intensity. Keep showing up!",
+      "👨‍💻 You’re doing great—one line of code at a time!",
+      "📘 The more you learn, the more you grow!",
+      "🔥 Don’t stop when you’re tired, stop when you’re done!",
+      "🌱 Start where you are. Use what you have. Do what you can. — Arthur Ashe",
+      "🎯 The secret of getting ahead is getting started. — Mark Twain",
+      "🔥 Success usually comes to those who are too busy to be looking for it. — Henry David Thoreau",
+      "🛠️ Don’t watch the clock; do what it does. Keep going. — Sam Levenson",
+      "💪 You don’t have to be great to start, but you have to start to be great. — Zig Ziglar",
+      "🏁 Don’t count the days, make the days count. — Muhammad Ali",
+      "🧠 Whether you think you can or think you can’t, you’re right. — Henry Ford",
+      "🚀 If you want to achieve greatness stop asking for permission. — Anonymous",
+      "🌄 Believe you can and you're halfway there. — Theodore Roosevelt",
+      "🎉 It always seems impossible until it is done. — Nelson Mandela"
+    ];
+
+    let index = 0;
+    const quoteText = document.getElementById("quote-text");
+
+    setInterval(() => {
+      quoteText.classList.add("fade-out");
+
+      setTimeout(() => {
+        index = (index + 1) % quotes.length;
+        quoteText.textContent = quotes[index];
+        quoteText.classList.remove("fade-out");
+      }, 500);
+    }, 5000);
+  };
+</script>
+
+
+
 </body>
 </html>

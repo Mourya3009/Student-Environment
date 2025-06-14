@@ -81,17 +81,18 @@ body {
   gap: 0.5rem;
 }
 
-/* Quote Card */
-.quote-card {
+/* Quote Box */
+.quote-box {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
   color: white;
   padding: 1rem;
   border-radius: 0.5rem;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
 }
 
-.quote-card p {
+.quote-box p {
   font-size: 1.125rem;
   font-weight: 500;
 }
@@ -586,3 +587,26 @@ body {
     justify-content: center;
   }
 }
+
+ .quote-box {
+  background: linear-gradient(to right, #667eea, #ee74ad);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.4rem;
+  border-radius: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease-in-out;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
