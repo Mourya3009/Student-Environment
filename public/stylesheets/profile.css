@@ -1,0 +1,628 @@
+ /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+            color: #2E2E2E;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #5C6BC0;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .edit-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: white;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            color: #2E2E2E;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn:hover {
+            background-color: #9575CD;
+            color: white;
+            border-color: #9575CD;
+        }
+
+        .edit-btn.editing {
+            background-color: #5C6BC0;
+            color: white;
+            border-color: #5C6BC0;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 12px;
+            border: 2px solid rgba(92, 107, 192, 0.2);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 24px 24px 0;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #5C6BC0;
+            margin-bottom: 16px;
+        }
+
+        .skills-title {
+            color: #A5D6A7;
+        }
+
+        .interests-title {
+            color: #F48FB1;
+        }
+
+        .card-content {
+            padding: 0 24px 24px;
+        }
+
+        /* Profile Header */
+        .profile-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .profile-image-container {
+            position: relative;
+        }
+
+        .profile-image {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            border: 4px solid rgba(92, 107, 192, 0.2);
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .camera-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #5C6BC0;
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .camera-btn:hover {
+            background-color: #9575CD;
+        }
+
+        .profile-info {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2E2E2E;
+            margin-bottom: 8px;
+        }
+
+        .profile-email {
+            font-size: 1.125rem;
+            color: #6B7280;
+        }
+
+        .name-input, .email-input {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            padding: 8px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .email-input {
+            font-size: 1.125rem;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .profile-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge i {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Academic Details */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .academic-item h4 {
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 4px;
+        }
+
+        .academic-item p {
+            color: #6B7280;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #2E2E2E;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #5C6BC0;
+        }
+
+        /* Skills and Interests */
+        .skills-card {
+            border-left: 4px solid #A5D6A7;
+        }
+
+        .interests-card {
+            border-left: 4px solid #F48FB1;
+        }
+
+        .skills-container,
+        .interests-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .skill-badge {
+            background: rgba(165, 214, 167, 0.2);
+            color: #2E2E2E;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background: rgba(165, 214, 167, 0.3);
+        }
+
+        .interest-badge {
+            background: rgba(244, 143, 177, 0.2);
+            color: #2E2E2E;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .interest-badge:hover {
+            background: rgba(244, 143, 177, 0.3);
+        }
+
+        .remove-btn {
+            margin-left: 8px;
+            color: #EF4444;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .remove-btn:hover {
+            color: #DC2626;
+        }
+
+        .add-skill-container,
+        .add-interest-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .add-skill-container input,
+        .add-interest-container input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+        }
+
+        .add-btn {
+            background: #A5D6A7;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background: rgba(165, 214, 167, 0.8);
+        }
+
+        /* Projects */
+        .project-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 16px;
+            background: rgba(248, 249, 250, 0.3);
+            margin-bottom: 24px;
+        }
+
+        .project-item h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 8px;
+        }
+
+        .project-item p {
+            color: #6B7280;
+            margin-bottom: 12px;
+        }
+
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-badge {
+            border: 1px solid #E5E7EB;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            color: #6B7280;
+        }
+
+        .add-project-btn,
+        .add-experience-btn,
+        .add-certification-btn {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #E5E7EB;
+            background: transparent;
+            border-radius: 8px;
+            color: #6B7280;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .add-project-btn:hover,
+        .add-experience-btn:hover,
+        .add-certification-btn:hover {
+            border-color: #5C6BC0;
+            color: #5C6BC0;
+        }
+
+        /* Experience */
+        .experience-item {
+            border-left: 4px solid #5C6BC0;
+            padding-left: 16px;
+            margin-bottom: 24px;
+        }
+
+        .experience-item h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 4px;
+        }
+
+        .experience-item .company {
+            color: #5C6BC0;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .experience-item .duration {
+            font-size: 0.875rem;
+            color: #6B7280;
+            margin-bottom: 8px;
+        }
+
+        .experience-item .description {
+            color: #6B7280;
+        }
+
+        /* Certifications */
+        .certification-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            background: rgba(248, 249, 250, 0.3);
+            margin-bottom: 16px;
+        }
+
+        .cert-info h4 {
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 4px;
+        }
+
+        .cert-info p {
+            color: #6B7280;
+            margin-bottom: 2px;
+        }
+
+        .cert-date {
+            font-size: 0.875rem;
+        }
+
+        .cert-id {
+            font-size: 0.75rem;
+        }
+
+        .verified-badge {
+            background: rgba(92, 107, 192, 0.1);
+            color: #5C6BC0;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .modal-header h3 {
+            color: #5C6BC0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #6B7280;
+            padding: 4px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #F3F4F6;
+        }
+
+        .modal-body {
+            padding: 24px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .submit-btn {
+            flex: 1;
+            background: #5C6BC0;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #9575CD;
+        }
+
+        .submit-btn:disabled {
+            background: #D1D5DB;
+            cursor: not-allowed;
+        }
+
+        .cancel-btn {
+            flex: 1;
+            background: white;
+            color: #6B7280;
+            border: 2px solid #E5E7EB;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cancel-btn:hover {
+            background: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .profile-content {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .profile-info {
+                text-align: left;
+            }
+
+            .profile-badges {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 16px;
+                gap: 24px;
+            }
+
+            .main-title {
+                font-size: 2rem;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .edit-btn {
+                justify-content: center;
+            }
+
+            .profile-content {
+                padding: 24px;
+            }
+
+            .academic-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+        }

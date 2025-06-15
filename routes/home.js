@@ -7,13 +7,13 @@ import isLoggedin from '../middlewares/isLoggedin.js';
 
 router.get("/",(req,res)=>{
     if(req.cookies.token!=="" && req.cookies.token){
-        return res.redirect('/profile');
+        return res.redirect('/dashboard');
     }
     res.render('home.ejs');
 })
 router.get('/login',(req,res)=>{
     if(req.cookies.token!=="" && req.cookies.token){
-        return res.redirect('/profile');
+        return res.redirect('/dashboard');
     }
     res.render("login.ejs");
 })

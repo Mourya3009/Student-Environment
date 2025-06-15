@@ -3,9 +3,436 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
 </head>
 <body>
-    <h1>HELLO <%= name %></h1>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="main-title">Student Profile</h1>
+            <button id="editBtn" class="edit-btn">
+                <span class="icon">✏️</span>
+                Edit Profile
+            </button>
+        </div>
+
+        <!-- Profile Header Card -->
+        <div class="profile-card">
+            <div class="profile-content">
+                <!-- Profile Picture -->
+                <div class="profile-image-container">
+                    <div class="profile-image">
+                        <img id="profileImg" src="https://via.placeholder.com/150" alt="Profile">
+                    </div>
+                    <label class="camera-btn hidden" id="cameraBtn">
+                        <span class="icon">📷</span>
+                        <input type="file" accept="image/*" id="imageUpload" class="hidden">
+                    </label>
+                </div>
+
+                <!-- Basic Info -->
+                <div class="profile-info">
+                    <div class="profile-details">
+                        <input type="text" id="nameInput" class="name-input hidden" value="Alex Johnson">
+                        <h2 id="nameDisplay" class="profile-name"><%= name%></h2>
+                        
+                        <input type="email" id="emailInput" class="email-input hidden" value="alex.johnson@university.edu">
+                        <p id="emailDisplay" class="profile-email">alex.johnson@university.edu</p>
+                    </div>
+
+                    <div class="profile-badges">
+                        <div class="badge">
+                            <span class="icon">🎓</span>
+                            <span id="yearDisplay">3rd Year</span>
+                        </div>
+                        <div class="badge">
+                            <span class="icon">📍</span>
+                            <span id="locationDisplay">San Francisco, CA</span>
+                        </div>
+                        <div class="badge">
+                            <span class="icon">📅</span>
+                            <span>Graduating <span id="graduationDisplay">2025</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Academic Details -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <span class="icon">🎓</span>
+                    Academic Details
+                </h3>
+            </div>
+            <div class="card-content">
+                <div class="academic-grid" id="academicView">
+                    <div class="academic-item">
+                        <h4>Degree Program</h4>
+                        <p id="degreeDisplay">Bachelor of Computer Science</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>University</h4>
+                        <p id="universityDisplay">Tech University</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Current Year</h4>
+                        <p id="yearDisplayAcademic">3rd Year</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>GPA</h4>
+                        <p id="gpaDisplay">3.8/4.0</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Location</h4>
+                        <p id="locationDisplayAcademic">San Francisco, CA</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Expected Graduation</h4>
+                        <p id="graduationDisplayAcademic">2025</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Present Pursuing</h4>
+                        <p id="presentPursuingDisplay">Not specified</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Location (Text)</h4>
+                        <p id="locationTextDisplay">Not specified</p>
+                    </div>
+                    <div class="academic-item">
+                        <h4>Graduation Year (Dropdown)</h4>
+                        <p id="graduationYearDropdownDisplay">Not specified</p>
+                    </div>
+                </div>
+
+                <div class="academic-grid hidden" id="academicEdit">
+                    <div class="form-group">
+                        <label>Degree Program</label>
+                        <input type="text" id="degreeInput" value="Bachelor of Computer Science">
+                    </div>
+                    <div class="form-group">
+                        <label>University</label>
+                        <input type="text" id="universityInput" value="Tech University">
+                    </div>
+                    <div class="form-group">
+                        <label>Year of Study</label>
+                        <select id="yearSelect">
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year" selected>3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>GPA</label>
+                        <input type="text" id="gpaInput" value="3.8/4.0">
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <select id="locationSelect">
+                            <option value="San Francisco, CA" selected>San Francisco, CA</option>
+                            <option value="New York, NY">New York, NY</option>
+                            <option value="Los Angeles, CA">Los Angeles, CA</option>
+                            <option value="Chicago, IL">Chicago, IL</option>
+                            <option value="Boston, MA">Boston, MA</option>
+                            <option value="Seattle, WA">Seattle, WA</option>
+                            <option value="Austin, TX">Austin, TX</option>
+                            <option value="Denver, CO">Denver, CO</option>
+                            <option value="Atlanta, GA">Atlanta, GA</option>
+                            <option value="Miami, FL">Miami, FL</option>
+                            <option value="Phoenix, AZ">Phoenix, AZ</option>
+                            <option value="Portland, OR">Portland, OR</option>
+                            <option value="Washington, DC">Washington, DC</option>
+                            <option value="Philadelphia, PA">Philadelphia, PA</option>
+                            <option value="Dallas, TX">Dallas, TX</option>
+                            <option value="custom">Other (Custom)</option>
+                        </select>
+                        <input type="text" id="customLocationInput" class="hidden" placeholder="Enter custom location">
+                    </div>
+                    <div class="form-group">
+                        <label>Expected Graduation</label>
+                        <select id="graduationSelect">
+                            <option value="2024">2024</option>
+                            <option value="2025" selected>2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="custom">Other (Custom)</option>
+                        </select>
+                        <input type="text" id="customGraduationInput" class="hidden" placeholder="Enter custom graduation year">
+                    </div>
+                    <div class="form-group">
+                        <label>Present Pursuing</label>
+                        <input type="text" id="presentPursuingInput" placeholder="e.g., Bachelor's in Computer Science, Master's in Data Science">
+                    </div>
+                    <div class="form-group">
+                        <label>Location (Text)</label>
+                        <input type="text" id="locationTextInput" placeholder="Enter your current location">
+                    </div>
+                    <div class="form-group">
+                        <label>Graduation Year (Dropdown)</label>
+                        <select id="graduationYearDropdownSelect">
+                            <option value="">Select graduation year</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="card skills-card">
+            <div class="card-header">
+                <h3 class="card-title skills-title">
+                    <span class="icon">💻</span>
+                    Skills
+                </h3>
+            </div>
+            <div class="card-content">
+                <div class="skills-container" id="skillsContainer">
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">React</span>
+                    <span class="skill-badge">Node.js</span>
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Machine Learning</span>
+                    <span class="skill-badge">UI/UX Design</span>
+                </div>
+                <div class="add-skill-container hidden" id="addSkillContainer">
+                    <input type="text" id="newSkillInput" placeholder="Add a skill">
+                    <button id="addSkillBtn" class="add-btn">
+                        <span class="icon">➕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interests Section -->
+        <div class="card interests-card">
+            <div class="card-header">
+                <h3 class="card-title interests-title">
+                    <span class="icon">❤️</span>
+                    Interested In
+                </h3>
+            </div>
+            <div class="card-content">
+                <div class="interests-container" id="interestsContainer">
+                    <span class="interest-badge">Artificial Intelligence</span>
+                    <span class="interest-badge">Web Development</span>
+                    <span class="interest-badge">Data Science</span>
+                    <span class="interest-badge">Mobile Development</span>
+                </div>
+                <div class="add-interest-container hidden" id="addInterestContainer">
+                    <input type="text" id="newInterestInput" placeholder="Add an interest">
+                    <button id="addInterestBtn" class="add-btn">
+                        <span class="icon">➕</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <span class="icon">📁</span>
+                    Projects
+                </h3>
+            </div>
+            <div class="card-content">
+                <div id="projectsContainer">
+                    <div class="project-item">
+                        <h4>E-commerce Platform</h4>
+                        <p>Full-stack web application with React and Node.js</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Express</span>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <h4>AI Chatbot</h4>
+                        <p>Natural language processing chatbot using Python</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">TensorFlow</span>
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="addProjectBtn" class="add-project-btn hidden">
+                    <span class="icon">➕</span>
+                    Add Project
+                </button>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <span class="icon">💼</span>
+                    Experience
+                </h3>
+            </div>
+            <div class="card-content">
+                <div id="experienceContainer">
+                    <div class="experience-item">
+                        <h4>Software Engineering Intern</h4>
+                        <p class="company">TechCorp Inc.</p>
+                        <p class="duration">Jun 2024 - Aug 2024</p>
+                        <p class="description">Developed web applications using React and contributed to backend APIs</p>
+                    </div>
+                </div>
+                <button id="addExperienceBtn" class="add-experience-btn hidden">
+                    <span class="icon">➕</span>
+                    Add Experience
+                </button>
+            </div>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <span class="icon">🏆</span>
+                    Certifications
+                </h3>
+            </div>
+            <div class="card-content">
+                <div id="certificationsContainer">
+                    <div class="certification-item">
+                        <div class="cert-info">
+                            <h4>AWS Cloud Practitioner</h4>
+                            <p>Amazon Web Services</p>
+                            <p class="cert-date">March 2024</p>
+                            <p class="cert-id">ID: AWS-123456</p>
+                        </div>
+                        <span class="verified-badge">Verified</span>
+                    </div>
+                </div>
+                <button id="addCertificationBtn" class="add-certification-btn hidden">
+                    <span class="icon">➕</span>
+                    Add Certification
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Project</h3>
+                <button class="close-btn" onclick="closeModal('projectModal')">
+                    <span class="icon">✖️</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Project Title *</label>
+                    <input type="text" id="projectTitle" placeholder="Enter project title">
+                </div>
+                <div class="form-group">
+                    <label>Description *</label>
+                    <textarea id="projectDescription" placeholder="Describe your project" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Technologies</label>
+                    <input type="text" id="projectTechnologies" placeholder="React, Node.js, MongoDB (comma separated)">
+                </div>
+                <div class="modal-actions">
+                    <button id="submitProject" class="submit-btn">Submit</button>
+                    <button onclick="closeModal('projectModal')" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Experience</h3>
+                <button class="close-btn" onclick="closeModal('experienceModal')">
+                    <span class="icon">✖️</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Job Title *</label>
+                    <input type="text" id="experienceTitle" placeholder="Software Engineer Intern">
+                </div>
+                <div class="form-group">
+                    <label>Company *</label>
+                    <input type="text" id="experienceCompany" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <label>Duration *</label>
+                    <input type="text" id="experienceDuration" placeholder="Jun 2024 - Aug 2024">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="experienceDescription" placeholder="Describe your role and achievements" rows="3"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button id="submitExperience" class="submit-btn">Submit</button>
+                    <button onclick="closeModal('experienceModal')" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certification Modal -->
+    <div id="certificationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Certification</h3>
+                <button class="close-btn" onclick="closeModal('certificationModal')">
+                    <span class="icon">✖️</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Certification Name *</label>
+                    <input type="text" id="certificationName" placeholder="AWS Cloud Practitioner">
+                </div>
+                <div class="form-group">
+                    <label>Issuing Organization *</label>
+                    <input type="text" id="certificationIssuer" placeholder="Amazon Web Services">
+                </div>
+                <div class="form-group">
+                    <label>Issue Date *</label>
+                    <input type="text" id="certificationDate" placeholder="March 2024">
+                </div>
+                <div class="form-group">
+                    <label>Credential ID</label>
+                    <input type="text" id="certificationId" placeholder="Optional credential ID">
+                </div>
+                <div class="modal-actions">
+                    <button id="submitCertification" class="submit-btn">Submit</button>
+                    <button onclick="closeModal('certificationModal')" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascripts/profile.js"></script>
 </body>
 </html>
