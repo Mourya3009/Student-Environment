@@ -224,7 +224,31 @@
             document.getElementById('presentPursuingDisplay').textContent = profileData.presentPursuing || 'Not specified';
             document.getElementById('locationTextDisplay').textContent = profileData.locationText || 'Not specified';
             document.getElementById('graduationYearDropdownDisplay').textContent = profileData.graduationYearDropdown || 'Not specified';
+        
+            // Save profile to the backend
+fetch('/api/save-profile', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+        ...profileData,
+        skills,
+        interests,
+        projects,
+        experiences,
+        certifications
+    })
+})
+.then(res => res.json())
+.then(data => alert(data.message))
+.catch(err => {
+    console.error(err);
+    alert("Failed to save profile.");
+});
+
+        
         }
+
+        
 
         function handleLocationChange() {
             const locationSelect = document.getElementById('locationSelect');
