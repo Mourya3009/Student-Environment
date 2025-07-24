@@ -24,19 +24,18 @@
                     </div>
                 </div>
                 <div class="header-buttons">
-                    <a href="/profile">
-                    <button class="btn btn-outline">
-                        <i class="fas fa-cog"></i>
-                        My Profile
-                    </button>
-                    </a>
-
-                    <a href="/logout">
-                    <button  class="btn btn-outline">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                    </button>
-                    </a>
+                    <form action="/profile" method="get">
+                        <button class="btn btn-outline" type="submit">
+                            <i class="fas fa-cog"></i>
+                            My Profile
+                        </button>
+                    </form>
+                    <form action="/logout" method="get">
+                        <button class="btn btn-outline" type="submit">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </button>
+                    </form>
                 </div>
             </div>
 
@@ -56,31 +55,35 @@
                         </div>
                         <div class="card-content">
                             <div class="progress-section">
-                                <div class="progress-header">
+                                <!-- <div class="progress-header">
                                     <span>Overall Progress</span>
                                     <span>68% Complete</span>
-                                </div>
-                                <div class="progress-bar">
+                                </div> -->
+                                <!-- <div class="progress-bar">
                                     <div class="progress-fill" style="width: 68%"></div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="current-course">
                                 <p class="course-label">Currently learning:</p>
                                 <p class="course-name">Advanced React Development</p>
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-play"></i>
-                                    Resume Learning
-                                </button>
+                                <form action="#" method="post">
+                                    <button class="btn btn-primary" type="submit">
+                                        <i class="fas fa-play"></i>
+                                        Resume Learning
+                                    </button>
+                                </form>
                             </div>
 
                             <div class="next-course">
                                 <p class="course-label">What's next for you?</p>
                                 <p class="course-name">Discover Advanced JavaScript Patterns</p>
-                                <button class="btn btn-secondary">
-                                    <i class="fas fa-arrow-right"></i>
-                                    Start Learning
-                                </button>
+                                <form action="#" method="post">
+                                    <button class="btn btn-secondary" type="submit">
+                                        <i class="fas fa-arrow-right"></i>
+                                        Start Learning
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -156,18 +159,22 @@
                                 <div class="project-item">
                                     <h4>E-commerce Dashboard</h4>
                                     <p>React, Node.js</p>
-                                    <button class="btn btn-outline">
-                                        <i class="fas fa-code"></i>
-                                        View Project
-                                    </button>
+                                    <form action="#" method="post">
+                                        <button class="btn btn-outline" type="submit">
+                                            <i class="fas fa-code"></i>
+                                            View Project
+                                        </button>
+                                    </form>
                                 </div>
                                 <div class="project-item">
                                     <h4>Weather App</h4>
                                     <p>JavaScript, API</p>
-                                    <button class="btn btn-outline">
-                                        <i class="fas fa-code"></i>
-                                        View Project
-                                    </button>
+                                    <form action="#" method="post">
+                                        <button class="btn btn-outline" type="submit">
+                                            <i class="fas fa-code"></i>
+                                            View Project
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -216,26 +223,34 @@
                         </div>
                         <div class="card-content">
                             <div class="quick-access-buttons">
-                                <button class="btn btn-outline full-width">
-                                    <i class="fas fa-robot"></i>
-                                    <span>AI Chatbot</span>
-                                    <small>Get code help</small>
-                                </button>
-                                <button class="btn btn-outline full-width">
-                                    <i class="fas fa-file-alt"></i>
-                                    <span>Resume Builder</span>
-                                    <small>Update profile</small>
-                                </button>
-                                <button class="btn btn-outline full-width">
-                                    <i class="fas fa-book-open"></i>
-                                    <span>Learning Resources</span>
-                                    <small>Discover content</small>
-                                </button>
-                                <button class="btn btn-outline full-width">
-                                    <i class="fas fa-sticky-note"></i>
-                                    <span>My Notes</span>
-                                    <small>Access saved notes</small>
-                                </button>
+                                <form action="#" method="post">
+                                    <button class="btn btn-outline full-width" type="submit">
+                                        <i class="fas fa-robot"></i>
+                                        <span>AI Chatbot</span>
+                                        <small>Get code help</small>
+                                    </button>
+                                </form>
+                                <form action="#" method="post">
+                                    <button class="btn btn-outline full-width" type="submit">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Resume Builder</span>
+                                        <small>Update profile</small>
+                                    </button>
+                                </form>
+                                <form action="#" method="post">
+                                    <button class="btn btn-outline full-width" type="submit">
+                                        <i class="fas fa-book-open"></i>
+                                        <span>Learning Resources</span>
+                                        <small>Discover content</small>
+                                    </button>
+                                </form>
+                                <form action="#" method="post">
+                                    <button class="btn btn-outline full-width" type="submit">
+                                        <i class="fas fa-sticky-note"></i>
+                                        <span>My Notes</span>
+                                        <small>Access saved notes</small>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -279,10 +294,12 @@
                         <div class="card-content">
                             <div class="wellbeing-section">
                                 <p class="wellbeing-question">How are you feeling today?</p>
-                                <button class="btn btn-mood" id="mood-btn">
-                                    <i class="fas fa-smile"></i>
-                                    Track Mood
-                                </button>
+                                <form action="#" method="post">
+                                    <button class="btn btn-mood" id="mood-btn" type="submit">
+                                        <i class="fas fa-smile"></i>
+                                        Track Mood
+                                    </button>
+                                </form>
                                 <p class="mood-tracked" id="mood-tracked" style="display: none;">Mood tracked! ✨</p>
                             </div>
 
@@ -290,10 +307,12 @@
 
                             <div class="wellbeing-section">
                                 <p class="wellbeing-question">Take a Break?</p>
-                                <button class="btn btn-mood">
-                                    <i class="fas fa-coffee"></i>
-                                    5-min Breathing Exercise
-                                </button>
+                                <form action="#" method="post">
+                                    <button class="btn btn-mood" type="submit">
+                                        <i class="fas fa-coffee"></i>
+                                        5-min Breathing Exercise
+                                    </button>
+                                </form>
                             </div>
 
                             <div class="disclaimer">
@@ -330,29 +349,30 @@
 
  
 
+ 
 
 
     <script src="/javascripts/dashboard.js"></script>
 <script>
   window.onload = function () {
     const quotes = [
-      "💡 Ready to learn something new today? Your dedication shines! ✨",
-      "🚀 Keep pushing forward—your future self will thank you!",
-      "🏆 Every small step you take adds up to big achievements!",
-      "💪 Consistency beats intensity. Keep showing up!",
-      "👨‍💻 You’re doing great—one line of code at a time!",
-      "📘 The more you learn, the more you grow!",
-      "🔥 Don’t stop when you’re tired, stop when you’re done!",
-      "🌱 Start where you are. Use what you have. Do what you can. — Arthur Ashe",
-      "🎯 The secret of getting ahead is getting started. — Mark Twain",
-      "🔥 Success usually comes to those who are too busy to be looking for it. — Henry David Thoreau",
-      "🛠️ Don’t watch the clock; do what it does. Keep going. — Sam Levenson",
-      "💪 You don’t have to be great to start, but you have to start to be great. — Zig Ziglar",
-      "🏁 Don’t count the days, make the days count. — Muhammad Ali",
-      "🧠 Whether you think you can or think you can’t, you’re right. — Henry Ford",
-      "🚀 If you want to achieve greatness stop asking for permission. — Anonymous",
-      "🌄 Believe you can and you're halfway there. — Theodore Roosevelt",
-      "🎉 It always seems impossible until it is done. — Nelson Mandela"
+      " Ready to learn something new today? Your dedication shines! ✨",
+      " Keep pushing forward—your future self will thank you!",
+      " Every small step you take adds up to big achievements!",
+      " Consistency beats intensity. Keep showing up!",
+      " You’re doing great—one line of code at a time!",
+      " The more you learn, the more you grow!",
+      " Don’t stop when you’re tired, stop when you’re done!",
+      " Start where you are. Use what you have. Do what you can. — Arthur Ashe",
+      " The secret of getting ahead is getting started. — Mark Twain",
+      " Success usually comes to those who are too busy to be looking for it. — Henry David Thoreau",
+      " Don’t watch the clock; do what it does. Keep going. — Sam Levenson",
+      " You don’t have to be great to start, but you have to start to be great. — Zig Ziglar",
+      " Don’t count the days, make the days count. — Muhammad Ali",
+      " Whether you think you can or think you can’t, you’re right. — Henry Ford",
+      " If you want to achieve greatness stop asking for permission. — Anonymous",
+      " Believe you can and you're halfway there. — Theodore Roosevelt",
+      " It always seems impossible until it is done. — Nelson Mandela"
     ];
 
     let index = 0;
